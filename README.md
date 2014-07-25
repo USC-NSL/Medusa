@@ -1,4 +1,4 @@
-# Medusa
+# Medusaa
 *A Programming Framework for Crowd-Sensing Applications*
 
 Have you ever wished, in the middle of a research project, for a 
