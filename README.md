@@ -31,7 +31,7 @@ Please read the text in "Project Home" link above first to understand what the M
 This source code is tested in the following platforms and devices.
 
 - Medusa Cloud
-    - OS: Ubuntu 9.04/10.04
+    - OS: Ubuntu 9.04/10.04 And Linux Mint 15
         - package required. (may use 'apt-get install' command)
             - to use mysql: python-mysqldb
             - to use php: php5-common libapache2-mod-php5 php5-cli php5-curl
@@ -45,7 +45,26 @@ This source code is tested in the following platforms and devices.
             - PHP
     - WorkerManager
         - apache-tomcat-6.0.35 with jdk-1.5.x.
-
+    - Websocket (GCM alternative)
+        - Requirements
+            - PHP
+                - [PECL](http://pecl.php.net/) Extension for PHP (aka, PEAR)
+                    - apt-get install php-pear
+                    - apt-get install php5-dev
+                    - apt-get install php5-mcrypt
+            - [ZeroMQ](http://zeromq.org/) for communication between the existing Medusa Server and the new WebSocket Server
+                - Follow [these](http://zeromq.org/bindings:php) instructions
+                    - Download the source, extract, and cd into it
+                    - ./autogen, ./configure, make, and then sudo make install
+                - sudo pecl install zmq-beta
+                - add extension=zmq.so to php.ini
+        - [Other Considerations](http://socketo.me/docs/deploy)
+            - if you plan on connecting hundreds of users, you may want to update linux’s maximum number of allowed per-process file descriptors
+                - see [ulimit](http://ss64.com/bash/ulimit.html)
+            - [Libevent](http://libevent.org/) speed’s up server-side web socket operations
+                - sudo apt-get install libevent libevent-dev
+                - sudo pecl install libevent
+                - add extension=libevent.so to php.ini
 - Android client.
     - Google Nexus I with Android 2.3.6
     - Samsung Galaxy Nexus with Android 4.0.4
