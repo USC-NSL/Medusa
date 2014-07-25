@@ -83,6 +83,9 @@ Go to the **medusa_cloud/config/** directory, and install the database schema.
 ```mysql -u [mysql_username] -p[mysql password] < medusa_db_schema.sql```
 
 This creates a database named *medusa* and a set of tables inside of it.
+Login to mysql database, find CS_env table in the *medusa* database. Change the URLs appropriately.
+Specifically, the *BASE-URL-DATA*, *SPC-HOST*, *SPC-URI*, *CS-DBHOST*, and *HIT-HOST* parameters, which all relate to the web address and web locaiton of the Medusa-cloud server.
+
 
 - Update the following configuration files within the directory **medusa_cloud/config/**
     - db_host.info
@@ -97,8 +100,6 @@ This creates a database named *medusa* and a set of tables inside of it.
         - Set to either ws_c2dm (for websocket), c2dm (for GCM), or sms
     - remote_host.info
         - The public facing IP on which the mdscript_acceptor.py is run
-
-Login to mysql database, find CS_env table in the *medusa* database. Change the URLs appropriately.
 
 #### Configure the WorkerManager
 Install the Apache Tomcat server, then extract **medusa_cloud/workermanager/medusa_hit_server.tar.gz** to the **apache-tomcat-root/webapps/medusa_hit_server/** directory. 

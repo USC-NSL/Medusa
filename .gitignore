@@ -11,4 +11,5 @@ Thumbs.db
 # ignore my unversiond stuffs
 My_unversioned_stuff/
 
-#medusa-client/Medusa/src/medusa/mobile/client/G.java
+medusa-cloud/tasktracker/program/*.xml
+medusa-cloud/tasktracker/logs/*.txt

@@ -116,7 +116,18 @@ CREATE TABLE `CS_env` (
 
 LOCK TABLES `CS_env` WRITE;
 /*!40000 ALTER TABLE `CS_env` DISABLE KEYS */;
-INSERT INTO `CS_env` VALUES ('BASE-URL-DATA','128.125.121.174/medusa/tasktracker/','','2011-12-06 06:06:36'),('SPC-HOST','128.125.121.174','','2011-12-06 06:07:31'),('SPC-URI','/medusa/tasktracker/web_tt_service.php','','2011-12-06 06:07:31'),('CS-DBHOST','128.125.121.174','','2011-12-06 06:08:15'),('CS-DBNAME','medusa','','2011-12-06 06:08:15'),('HIT-HOST','128.125.121.174:80','','2011-12-06 06:08:46'),('HIT-URI','/medusa_hit_server/MainServlet','','2011-12-06 06:08:46'),('FAIL-SLEEP-INTERVAL','3','sleep duration (second) when a stage fails.','2011-12-06 06:10:45'),('FAIL-RETRY-CNT','6','The number of retry when failed == # of SMS messages to the phone for one stage execution','2011-12-06 06:12:04'),('WAIT-DURATION-FOR-STAGE','1200','Unit: sec. Whole wait time for one HIT or SPC request.','2011-12-06 06:14:22'),('CHECK-PERIOD-FOR-STAGE-OUTPUT','5','check if there is an output from the HIT or SPC. repeat until WAIT-DURATION-FOR-STAGE time passes','2011-12-06 06:15:27');
+INSERT INTO `CS_env` VALUES 
+  ('BASE-URL-DATA','xxx.xxx.xxx.xxx/Medusa/medusa-cloud/tasktracker/','','2011-12-06 06:06:36'),
+  ('SPC-HOST','xxx.xxx.xxx.xxx','','2011-12-06 06:07:31'),
+  ('SPC-URI','/Medusa/medusa-cloud/tasktracker/web_tt_service.php','','2011-12-06 06:07:31'),
+  ('CS-DBHOST','xxx.xxx.xxx.xxx','','2011-12-06 06:08:15'),
+  ('CS-DBNAME','medusa','','2011-12-06 06:08:15'),
+  ('HIT-HOST','xxx.xxx.xxx.xxx:80','','2011-12-06 06:08:46'),
+  ('HIT-URI','/medusa_hit_server/MainServlet','','2011-12-06 06:08:46'),
+  ('FAIL-SLEEP-INTERVAL','3','sleep duration (second) when a stage fails.','2011-12-06 06:10:45'),
+  ('FAIL-RETRY-CNT','6','The number of retry when failed == # of SMS messages to the phone for one stage execution','2011-12-06 06:12:04'),
+  ('WAIT-DURATION-FOR-STAGE','1200','Unit: sec. Whole wait time for one HIT or SPC request.','2011-12-06 06:14:22'),
+  ('CHECK-PERIOD-FOR-STAGE-OUTPUT','5','check if there is an output from the HIT or SPC. repeat until WAIT-DURATION-FOR-STAGE time passes','2011-12-06 06:15:27');
 /*!40000 ALTER TABLE `CS_env` ENABLE KEYS */;
 UNLOCK TABLES;
 
