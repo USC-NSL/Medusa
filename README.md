@@ -84,7 +84,7 @@ Go to the **medusa_cloud/config/** directory, and install the database schema.
 
 This creates a database named *medusa* and a set of tables inside of it.
 
-Update the following configuration files within the directory **medusa_cloud/config/**
+- Update the following configuration files within the directory **medusa_cloud/config/**
     - db_host.info
         - The hostname on which the mysql server containing the medusa database is run
             - ex: ```localhost```
