@@ -24,11 +24,11 @@ A thorough description of Medusa can be found at the Networked Systems Lab [proj
 
 ## Getting Started
 
-Please read the text in "Project Home" link above first to understand what the Medusa system does. This document provides a way on how to configure Medusa client and cloud components to your environment.
+This document provides a way on how to configure Medusa client and cloud components to your environment.
 
 ### Requirements
 
-This source code is tested on the following platforms and devices.
+This source code is tested on the following platforms, devices, and dependencies
 
 - Medusa Cloud
     - OS: Ubuntu 9.04/10.04, and Mint15
