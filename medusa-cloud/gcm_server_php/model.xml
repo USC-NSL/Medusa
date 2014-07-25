@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CANINFOs>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0F1</CANID>
+	<HumanName>Brake_Active</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x000</MPid>
+	<CANMessage>CAN_ID_BRAKE_APPLY_STATUS</CANMessage>
+	<StartByte>3</StartByte>
+	<StartBit>7</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0F1</CANID>
+	<HumanName>Hard_Brake</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x001</MPid>
+	<CANMessage>CAN_ID_BRAKE_APPLY_STATUS</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>6</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0F1</CANID>
+	<HumanName>Rolling_Brakes_Count</HumanName>
+	<MIN>0</MIN>
+	<MAX>3</MAX>
+	<VALUETYPE>uint</VALUETYPE>
+	<MPid>0x002</MPid>
+	<CANMessage>CAN_ID_BRAKE_APPLY_STATUS</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>5</StartBit>
+	<Len>2</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1F5</CANID>
+	<HumanName>Shifter_Position</HumanName>
+	<MIN>0</MIN>
+	<MAX>3</MAX>
+	<VALUETYPE>uint</VALUETYPE>
+	<MPid>0x010</MPid>
+	<CANMessage>CAN_ID_PPEI_TRANS_GENERAL_STATUS_2</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>3</StartBit>
+	<Len>4</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1E9</CANID>
+	<HumanName>Traction_Control</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x020</MPid>
+	<CANMessage>CAN_ID_CHASSIS_GENERAL_STATUS_1</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>4</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1E9</CANID>
+	<HumanName>Vehicle_Acceleration_Lat</HumanName>
+	<MIN>-32</MIN>
+	<MAX>32</MAX>
+	<VALUETYPE>double</VALUETYPE>
+	<MPid>0x021</MPid>
+	<CANMessage>CAN_ID_CHASSIS_GENERAL_STATUS_1</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>3</StartBit>
+	<Len>12</Len>
+	<Conversion>N*0.015625</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1E9</CANID>
+	<HumanName>Vehicle_Dynamic_Yaw_Rate</HumanName>
+	<MIN>-128</MIN>
+	<MAX>128</MAX>
+	<VALUETYPE>double</VALUETYPE>
+	<MPid>0x022</MPid>
+	<CANMessage>CAN_ID_CHASSIS_GENERAL_STATUS_1</CANMessage>
+	<StartByte>4</StartByte>
+	<StartBit>3</StartBit>
+	<Len>12</Len>
+	<Conversion>N*0.0625</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1F1</CANID>
+	<HumanName>Power_Mode</HumanName>
+	<MIN>0</MIN>
+	<MAX>3</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x030</MPid>
+	<CANMessage>CAN_ID_PLATFORM_GENERAL_STATUS</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>1</StartBit>
+	<Len>2</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x2F9</CANID>
+	<HumanName>Rough_Road_Magnitude</HumanName>
+	<MIN>0</MIN>
+	<MAX>255</MAX>
+	<VALUETYPE>psi?</VALUETYPE>
+	<MPid>0x040</MPid>
+	<CANMessage>CAN_ID_CHASSIS_GENERAL_STATUS_2</CANMessage>
+	<StartByte>4</StartByte>
+	<StartBit>7</StartBit>
+	<Len>8</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x3E9</CANID>
+	<HumanName>Vehicle_Speed</HumanName>
+	<MIN>0</MIN>
+	<MAX>240</MAX>
+	<VALUETYPE>mph</VALUETYPE>
+	<MPid>0x050</MPid>
+	<CANMessage>CAN_ID_VEHICLE_SPEED_DISTANCE</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>7</StartBit>
+	<Len>16</Len>
+	<Conversion>N*0.009708925</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x17D</CANID>
+	<HumanName>Vehicle_Acceleration_Lon</HumanName>
+	<MIN>-25</MIN>
+	<MAX>25</MAX>
+	<VALUETYPE>double</VALUETYPE>
+	<MPid>0x080</MPid>
+	<CANMessage>CAN_ID_ACTUAL_VEHICLE_ACCELERATION</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>3</StartBit>
+	<Len>12</Len>
+	<Conversion>N*0.01</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x12A</CANID>
+	<HumanName>Driver_Door_Open_Switch</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x090</MPid>
+	<CANMessage>CAN_ID_Driver_Door_SWITCH</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>1</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x12A</CANID>
+	<HumanName>Driver_Door_Ajar_Switch</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x091</MPid>
+	<CANMessage>CAN_ID_Driver_Door_SWITCH</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>0</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0C050040</CANID>
+	<HumanName>Vehicle_Speed_Average_Driven</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x100</MPid>
+	<CANMessage>CAN_ID_VEHICLE_SPEED_INFO</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>6</StartBit>
+	<Len>15</Len>
+	<Conversion>N*0.009708925</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0C050040</CANID>
+	<HumanName>Engine_Speed</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>rpm</VALUETYPE>
+	<MPid>0x101</MPid>
+	<CANMessage>CAN_ID_VEHICLE_SPEED_INFO</CANMessage>
+	<StartByte>4</StartByte>
+	<StartBit>7</StartBit>
+	<Len>16</Len>
+	<Conversion>N*0.025</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x10042040</CANID>
+	<HumanName>Left_Turn_Signal</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x130</MPid>
+	<CANMessage>CAN_ID_LIGHTING_STATUS</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>3</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x10042040</CANID>
+	<HumanName>Right_Turn_Signal</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x131</MPid>
+	<CANMessage>CAN_ID_LIGHTING_STATUS</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>5</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1005E040</CANID>
+	<HumanName>Cruise_Control_Driver_Selected_Speed</HumanName>
+	<MIN>0</MIN>
+	<MAX>259</MAX>
+	<VALUETYPE>mph</VALUETYPE>
+	<MPid>0x140</MPid>
+	<CANMessage>CAN_ID_BRAKE_AND_CRUISE_CONTROL_STATUS</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>3</StartBit>
+	<Len>12</Len>
+	<Conversion>N*0.03883569951</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100AA097</CANID>
+	<HumanName>Latitude</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>degrees</VALUETYPE>
+	<MPid>0x160</MPid>
+	<CANMessage>CAN_ID_GPS_LOCATION</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>5</StartBit>
+	<Len>30</Len>
+	<Conversion>N/3600000</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100AA097</CANID>
+	<HumanName>Longetude</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>degrees</VALUETYPE>
+	<MPid>0x161</MPid>
+	<CANMessage>CAN_ID_GPS_LOCATION</CANMessage>
+	<StartByte>4</StartByte>
+	<StartBit>6</StartBit>
+	<Len>31</Len>
+	<Conversion>N/3600000</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100AC097</CANID>
+	<HumanName>Heading</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>degrees</VALUETYPE>
+	<MPid>0x170</MPid>
+	<CANMessage>CAN_ID_GPS_HEADING</CANMessage>
+	<StartByte>0</StartByte>
+	<StartBit>0</StartBit>
+	<Len>0</Len>
+	<Conversion>N*0.01</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100C2099</CANID>
+	<HumanName>Temperature_Outside</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>degrees_F</VALUETYPE>
+	<MPid>0x180</MPid>
+	<CANMessage>CAN_ID_OUTSIDE_TEMPERATURE</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>7</StartBit>
+	<Len>8</Len>
+	<Conversion>N*0.9-40</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100AC097</CANID>
+	<HumanName>Elevation</HumanName>
+	<MIN>-100000</MIN>
+	<MAX>1997151</MAX>
+	<VALUETYPE>cm</VALUETYPE>
+	<MPid>0x171</MPid>
+	<CANMessage>CAN_ID_GPS_HEADING</CANMessage>
+	<StartByte>5</StartByte>
+	<StartBit>4</StartBit>
+	<Len>21</Len>
+	<Conversion>N-100000</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0C050040</CANID>
+	<HumanName>Throttle_Position</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>percent</VALUETYPE>
+	<MPid>0x102</MPid>
+	<CANMessage>CAN_ID_VEHICLE_SPEED_INFO</CANMessage>
+	<StartByte>6</StartByte>
+	<StartBit>7</StartBit>
+	<Len>8</Len>
+	<Conversion>N*0.392157</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x10022040</CANID>
+	<HumanName>Outside_Ambient_Light_Level_Status</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>uint</VALUETYPE>
+	<MPid>0x200</MPid>
+	<CANMessage>CAN_ID_DIMMING_INFORMATION</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>3</StartBit>
+	<Len>2</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x0000E059</CANID>
+	<HumanName>Passenger_Classification_Type</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>uint</VALUETYPE>
+	<MPid>0x210</MPid>
+	<CANMessage>CAN_ID_AUTO_OCCUPANT_SENSING_STATUS</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>6</StartBit>
+	<Len>4</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1004C040</CANID>
+	<HumanName>Fuel_Level_Percent</HumanName>
+	<MIN>0</MIN>
+	<MAX>100</MAX>
+	<VALUETYPE>percent</VALUETYPE>
+	<MPid>0x220</MPid>
+	<CANMessage>CAN_ID_FUEL_INFORMATION</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>7</StartBit>
+	<Len>8</Len>
+	<Conversion>N*0.392157</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100C8099</CANID>
+	<HumanName>Climate_Control_Driver_Set_Temperature</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>degree_F</VALUETYPE>
+	<MPid>0x240</MPid>
+	<CANMessage>CAN_ID_CLIMATE_CONTROL_GENERAL_STATUS_2</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>7</StartBit>
+	<Len>8</Len>
+	<Conversion>N*0.18+50</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100C8099</CANID>
+	<HumanName>Climate_Control_Front_Blower_Fan_Speed</HumanName>
+	<MIN>0</MIN>
+	<MAX>100</MAX>
+	<VALUETYPE>percent</VALUETYPE>
+	<MPid>0x241</MPid>
+	<CANMessage>CAN_ID_CLIMATE_CONTROL_GENERAL_STATUS_2</CANMessage>
+	<StartByte>2</StartByte>
+	<StartBit>7</StartBit>
+	<Len>8</Len>
+	<Conversion>N*0.392157</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100C8099</CANID>
+	<HumanName>Climate_Control_Air_Inlet_Mode</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>uint</VALUETYPE>
+	<MPid>0x242</MPid>
+	<CANMessage>CAN_ID_CLIMATE_CONTROL_GENERAL_STATUS_2</CANMessage>
+	<StartByte>3</StartByte>
+	<StartBit>6</StartBit>
+	<Len>3</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x100C8099</CANID>
+	<HumanName>Climate_Control_Front_Blower_Fan_Set_Speed</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>uint</VALUETYPE>
+	<MPid>0x243</MPid>
+	<CANMessage>CAN_ID_CLIMATE_CONTROL_GENERAL_STATUS_2</CANMessage>
+	<StartByte>3</StartByte>
+	<StartBit>3</StartBit>
+	<Len>4</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x00120058</CANID>
+	<HumanName>Driver_Seatbelt_Attached</HumanName>
+	<MIN>0</MIN>
+	<MAX>1</MAX>
+	<VALUETYPE>bool</VALUETYPE>
+	<MPid>0x260</MPid>
+	<CANMessage>CAN_ID_AIRBAG_IMPACT_DATA</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>3</StartBit>
+	<Len>1</Len>
+	<Conversion>N/A</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1004C040</CANID>
+	<HumanName>Inst_Fuel_Consmp_Rate</HumanName>
+	<MIN>0</MIN>
+	<MAX>102.375</MAX>
+	<VALUETYPE>ltrs/hr</VALUETYPE>
+	<MPid>0x221</MPid>
+	<CANMessage>CAN_ID_FUEL_INFORMATION</CANMessage>
+	<StartByte>4</StartByte>
+	<StartBit>3</StartBit>
+	<Len>12</Len>
+	<Conversion>N*0.025</Conversion>
+</CANINFO>
+<CANINFO>
+	<CarType>GM_DGE</CarType>
+	<CANID>0x1E5</CANID>
+	<HumanName>Steering_Wheel_Angle</HumanName>
+	<MIN>-2048</MIN>
+	<MAX>2048</MAX>
+	<VALUETYPE>degrees</VALUETYPE>
+	<MPid>0x230</MPid>
+	<CANMessage>CAN_ID_STEERING_WHEEL_ANGLE</CANMessage>
+	<StartByte>1</StartByte>
+	<StartBit>7</StartBit>
+	<Len>16</Len>
+	<Conversion>N*0.0625</Conversion>
+</CANINFO>
+</CANINFOs>

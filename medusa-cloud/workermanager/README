@@ -1,0 +1,11 @@
+Installation Guideline.
+
+a. medusa_hit_server.tar.gz
+	- extract medusa_hit_serve.tar.gz and put it at the [apach tomcat root]/webapps/ directory.
+
+b. config_files.tar.gz
+	- extract config_files.tar.gz and put it at /opt/ directory.
+
+c. configure the dbpool.properties file accordingly.
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Medusa</string>   
+        
+    <string name="exit_label">Exit</string>
+    <string name="exit_shortcut">x</string>
+    <string name="settings_label">Settings</string>
+    <string name="settings_title">My settings</string>
+    <string name="settings_shortcut">s</string>
+    
+    <string name="log_title">Log</string>
+    <string name="log_summary">Log to file</string>
+    <string name="extra_title">Extra</string>
+    <string name="extra_summary">Extra option</string>
+    <string name="extra2_title">Extra2</string>
+    <string name="extra2_summary">Extra2 option</string>
+
+	<string name="clearscreen_label">Clear Screen</string>    
+    
+    <string name="menu_label_1">C2DM ID</string>
+    <string name="menu_label_2">Run Medusalet</string>    
+	<string name="menu_label_3">menu 3</string>
+	<string name="menu_label_4">menu 4</string>
+	<string name="menu_label_5">menu 5</string>
+	<string name="menu_label_6">menu 6</string>
+	<string name="menu_label_7">menu 7</string>
+</resources>

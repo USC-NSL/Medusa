@@ -1,0 +1,19 @@
+- Medusa
+	: Medusa client core. 
+
+- Medusalets
+	: Example medusalet implementations.
+	  Availalbe medusalets are as follows.
+	
+		a. medusalet_gpsrawcollect
+		b. medusalet_netstats
+		c. medusalet_vcollect
+		d. medusalet_combiner
+		e. medusalet_helloworld
+		f. medusalet_probedata
+		g. medusalet_vfeature
+		h. medusalet_facedetect 
+		i. medusalet_mediagen
+		j. medusalet_uploaddata 
+		k. medusalet_videosummary
+

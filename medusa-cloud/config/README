@@ -1,0 +1,17 @@
+Installation Guideline.
+
+	- db_host.info
+		: hostname for mysql db.
+
+	- db_account.info
+		: mysql account info. [id]|[pwd] format.
+
+	- medusa_db_schema.sql
+		: Information on constructing mysql database with tables.
+		  To install,
+			> mysql -u [mysql_username] -p[mysql password] < medusa_db_schema.sql
+
+	- c2dm_master_gmail_account.info  
+		: put the gmail account information to use Google's C2DM service.
+
+

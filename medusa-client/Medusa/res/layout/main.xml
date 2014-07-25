@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="Stop Service" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:text="Clear Screen" />
+
+        <Button
+            android:id="@+id/btn_amttask"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.07"
+            android:text="AMT Sandbox" />
+
+        <Button
+            android:id="@+id/btn_medusa_mainpage"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17"
+            android:text="Medusa WebMain" />
+    </LinearLayout>
+	    	             
+	<ScrollView android:id="@+id/textAreaScroller" 
+    	android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        > 
+
+	<TextView
+	    android:id="@+id/output"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="* Starting" />
+
+	</ScrollView> 
+		       
+</LinearLayout>
