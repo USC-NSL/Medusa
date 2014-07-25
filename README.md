@@ -24,5 +24,28 @@ A thorough description of Medusa can be found at the Networked Systems Lab [proj
 
 ## Getting Started
 
-### Installing Medusa
+Please read the text in "Project Home" link above first to understand what the Medusa system does. This document provides a way on how to configure Medusa client and cloud components to your environment.
 
+### Requirements
+
+This source code is tested in the following platforms and devices.
+
+- Medusa Cloud
+    - OS: Ubuntu 9.04/10.04
+        - package required. (may use 'apt-get install' command)
+            - to use mysql: python-mysqldb
+            - to use php: php5-common libapache2-mod-php5 php5-cli php5-curl
+            - to use sendmail: sendmail-bin
+    - TaskTracker
+        - python 2.6.x
+        - LAMP
+            - Ubuntu 9.04(jaunty), 10.04(lucid)
+            - Apache web server
+            - Mysql 5.0.x
+            - PHP
+    - WorkerManager
+        - apache-tomcat-6.0.35 with jdk-1.5.x.
+
+- Android client.
+    - Google Nexus I with Android 2.3.6
+    - Samsung Galaxy Nexus with Android 4.0.4
