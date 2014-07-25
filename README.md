@@ -138,10 +138,10 @@ Open the G.java file in **medusa_android/Medusa** project. Change the following 
 First, to use the TaskTracker properly, change the following entries.
 
 ```java
-/* Task tracker location */
-public static final String SERVER_URL = "http://xxx.xxx.xxx.xxx";
-public static final String URIBASE_UPLOAD = SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_upload.php";
-public static final String URIBASE_REPORT = SERVER_URL + "/Medusa/medusa-cloud/web_tt_service.php";
+/* Medusa cloud configuration */
+public static final String SERVER_URL = "xxx.xxx.xxx.xxx";  /* Task tracker location */
+public static final String URIBASE_UPLOAD = "http://" + SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_upload.php";
+public static final String URIBASE_REPORT = "http://" + SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_service.php";
 ```
 
 Second, you need a master account to use Google's GCM notification service.
@@ -164,7 +164,6 @@ Fourth, configure the websocket address location and port number
 
 ```java
 /* Web Socket Server*/
-public static String WSS_HOSTNAME = "xxx.xxx.xxx";
 public static String WSS_PORT = "9002";
 ```
 
