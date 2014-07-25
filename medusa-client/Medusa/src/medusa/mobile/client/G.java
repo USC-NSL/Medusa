@@ -62,7 +62,7 @@ public class G
 	/* GCM Id*/
 	public static String GCM_ID = "medusagcm";
 	/* Web Socket Server*/
-	public static String WSS_HOSTNAME = "xxx.xxx.xxx.xxx";
+	public static String WSS_HOSTNAME = "128.xxx.xxx.xxx";
 	public static String WSS_PORT = "9002";
 
 	public static final String NAME = "Medusa";
