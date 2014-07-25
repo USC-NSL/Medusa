@@ -175,9 +175,9 @@ To verify all configurations are correct, execute a simple app.
 
 Run Medusa client on the phone. Setup the client's WID using the menu or the automatic popup window, say **wid**.
 
-On the server, go to **medusa_cloud/tasktracker/program/**. Find hello_ws.xml, and set the **wwid** field the the **wid** you entered on the client.
+On the server, go to **medusa_cloud/tasktracker/tests/**. Find hello_ws.xml, and set the **wwid** field the the **wid** you entered on the client.
 
-To run the program, at **medusa/cloud/tasktracker/**. execute the following command.
+To run the program, at **medusa/cloud/tasktracker/tests/**. execute the following command.
 
 ```python ./run_xml.py program/hello_ws.xml```
 
