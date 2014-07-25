@@ -38,7 +38,7 @@ public class G
 	 * *************************************************************************************
 	 */
 	/* Medusa cloud configuration */
-	public static final String SERVER_URL = "http://128.xxx.xxx.xxx";	/* Task tracker location */
+	public static final String SERVER_URL = "http://xxx.xxx.xxx.xxx";	/* Task tracker location */
 	public static final String URIBASE_UPLOAD = SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_upload.php";
 	public static final String URIBASE_REPORT = SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_service.php";
 	/* For using reverse incentives */
@@ -62,7 +62,7 @@ public class G
 	/* GCM Id*/
 	public static String GCM_ID = "medusagcm";
 	/* Web Socket Server*/
-	public static String WSS_HOSTNAME = "128.xxx.xxx.xxx";
+	public static String WSS_HOSTNAME = "xxx.xxx.xxx.xxx";
 	public static String WSS_PORT = "9002";
 
 	public static final String NAME = "Medusa";

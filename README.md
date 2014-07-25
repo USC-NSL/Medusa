@@ -163,8 +163,9 @@ Fourth, configure the websocket address location and port number
 
 ```java
 /* Web Socket Server*/
-public static String WSS_HOSTNAME = "127.0.0.1";
-public static String WSS_PORT = "9002";```
+public static String WSS_HOSTNAME = "xxx.xxx.xxx";
+public static String WSS_PORT = "9002";
+```
 
 The first and the second are mandatory. The third and fourth are optional depending on your usage. Compile **medusa_android>/Medusa** project and install it in a phone.
 
