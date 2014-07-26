@@ -160,7 +160,7 @@ public static final String AMT_WRID = "AKIAJ4DYABCDEFGHIJKL";
 public static final String AMT_WRKEY = "oyg+tsrPO3cQ85abcdefghijklmnopqrstuvwxyz";
 ```
 
-Fourth, configure the websocket address location and port number
+Fourth, configure the websocket address port number
 
 ```java
 /* Web Socket Server*/
@@ -168,6 +168,8 @@ public static String WSS_PORT = "9002";
 ```
 
 The first and the second are mandatory. The third and fourth are optional depending on your usage. Compile **medusa_android>/Medusa** project and install it in a phone.
+
+Note that if you wish build any additional medusalets, you must compile them and move the .apk file to **medusa_android/Medusa/assets/**
 
 ### Run the HelloWorld app.
 To verify all configurations are correct, execute a simple app.
