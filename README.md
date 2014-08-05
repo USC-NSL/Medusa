@@ -84,7 +84,7 @@ Go to the **medusa_cloud/config/** directory, and install the database schema.
 
 This creates a database named *medusa* and a set of tables inside of it.
 Login to mysql database, find CS_env table in the *medusa* database. Change the URLs appropriately.
-Specifically, the *BASE-URL-DATA*, *SPC-HOST*, *SPC-URI*, *CS-DBHOST*, and *HIT-HOST* parameters, which all relate to the web address and web locaiton of the Medusa-cloud server.
+Specifically, the *BASE-URL-DATA*, *SPC-HOST*, *SPC-URI*, *CS-DBHOST*, and *HIT-HOST* parameters, which all relate to the web address and web location of the Medusa-cloud server.
 
 
 - Update the following configuration files within the directory **medusa_cloud/config/**
@@ -119,8 +119,8 @@ If this is the case, you may need to make the account that runs the medusa serve
 The medusa cloud requires two daemon processes running in the background. 
 In the **medusa_cloud/tasktracker/** directory, run the following commands.
 
-```nohup ./mdscript_runner.py & ```
-```nohup ./mdscript_acceptor.py & ```
+```python nohup ./mdscript_runner.py & ```
+```python nohup ./mdscript_acceptor.py & ```
 
 If using websockets and you get an error like this:
 *Failed to bind the ZMQ: Address already in use* 
