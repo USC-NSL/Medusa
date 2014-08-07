@@ -64,7 +64,8 @@ This project is tested on the following platforms, devices, and dependencies:
             - [Libevent](http://libevent.org/) speeds up server-side web socket operations
                 - ```apt-get install libevent libevent-dev```
                 - ```pecl install libevent```
-                - add the ```extension=libevent.so``` line to your php.ini
+                - add the ```extension=libevent.so``` line to your php CLI ini file (ussually in /etc/php5/cli/)
+                    - 
 - Android client
     - Depends on the [OpenCV-2.3.1](http://sourceforge.net/projects/opencvlibrary/files/opencv-android/2.3.1/OpenCV-2.3.1-android-bin.tar.bz2/download) library
     - Tested on the following phones
