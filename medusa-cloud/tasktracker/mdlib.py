@@ -16,6 +16,9 @@ starttime = None
 logfile = None
 DEBUG = True
 
+DB_USERNAME = ((open('../config/db_account.info').read().rstrip()).split('|'))[0]
+DB_PASSWORD = ((open('../config/db_account.info').read().rstrip()).split('|'))[1]
+
 def log_init():
 	global initlib, starttime, logfile
 	starttime = datetime.now()
@@ -76,7 +79,7 @@ def get_single_mysql_data(host, dbname, sqlstmt):
 	data = None
 	
 	try:
-		con = mdb.connect(host, 'enladmin', 'enlvcaps', dbname)
+		con = mdb.connect(host, DB_USERNAME, DB_PASSWORD, dbname)
 		cur = con.cursor()
 		cur.execute(sqlstmt)
 
@@ -99,7 +102,7 @@ def get_raw_mysql_data(host, dbname, sqlstmt):
 	data = None
 		
 	try:
-		con = mdb.connect(host, 'enladmin', 'enlvcaps', dbname)
+		con = mdb.connect(host, DB_USERNAME, DB_PASSWORD, dbname)
 		cur = con.cursor()
 		cur.execute(sqlstmt)
 
