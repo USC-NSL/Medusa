@@ -58,7 +58,7 @@ This project is tested on the following platforms, devices, and dependencies:
                         - ```./autogen```, ```./configure```, ```make```, and then ```make install```
                 - ```pecl install zmq-beta```
                 - add ```extension=zmq.so``` line to your to php.ini file
-        - [Other Considerations](http://socketo.me/docs/deploy)
+        - **Optional** [Other Considerations](http://socketo.me/docs/deploy)
             - if you plan on connecting on the order of hundreds of Medusa clients, you may want to update your system’s maximum number of *allowed per-process file descriptors*
                 - see [ulimit](http://ss64.com/bash/ulimit.html) for more details
             - [Libevent](http://libevent.org/) speeds up server-side web socket operations
@@ -168,7 +168,7 @@ Fourth, configure the websocket address port number
 public static String WSS_PORT = "9002";
 ```
 
-The first and the second are mandatory. The third and fourth are optional depending on your usage. Compile **medusa_android>/Medusa** project and install it in a phone.
+The first and the second are mandatory. The third and fourth are optional depending on your usage. Compile **medusa_android/Medusa** project and install it in a phone.
 
 Note that if you wish build any additional medusalets, you must compile them and move the .apk file to **medusa_android/Medusa/assets/**
 
