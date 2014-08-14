@@ -118,7 +118,7 @@ If this is the case, you may need to make the account that runs the medusa serve
 #### Running the Medusa Cloud Server
 
 The medusa cloud requires two daemon processes running in the background. 
-In the **medusa_cloud/tasktracker/** directory, run the following commands.
+Change directories to **medusa_cloud/tasktracker/**, run the following commands from within **medusa_cloud/tasktracker/**:
 
 ```python nohup ./mdscript_runner.py & ```
 ```python nohup ./mdscript_acceptor.py & ```
