@@ -91,25 +91,43 @@ public class MedusaletMain extends MedusaletBase
         				MedusaUtil.log(TAG, "file name: "+file);
         				if(type.equals("video")==true)
         				{
-        					String dat = "\"" + G.C2DM_ID + "\"," + uid + ",\"" + MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "\","+lat+","+lng+"," + time+','+size;
+        					//String dat = "\"" + G.C2DM_ID + "\"," + uid + ",\"" + MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "\","+lat+","+lng+"," + time+','+size;
+        					String dat = G.C2DM_ID + "#" + 
+        								 uid + "#" + 
+        								 MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "#" +
+        								 lat + "#" + 
+        								 lng +"#" + 
+        								 time + "#" +
+        								 size + "#";
         					MedusaUtil.log(TAG, "dat: "+dat);
         					resultData.add(dat);
         				}
         				else if (type.equals("image"))
         				{
-        					String dat = "\"" + G.C2DM_ID + "\"," + uid + ",\"" + MedusaTransformFFmpegAdapter2.ImgFeature(file) + "\","+lat+","+lng+"," + time+','+size;
-        					MedusaUtil.log(TAG, "dat: "+dat);
-        					resultData.add(dat);
-        					
-        					//get exif metadata
+        					        					
         					try
         					{
-        						resultData.add(ExifMetaData.MetaDataJSON(file));
+        						ExifMetaData imd = new ExifMetaData(file);
+        						
+        						String dat = G.C2DM_ID + "#" + 
+        									  uid +  "#" +
+        									  MedusaTransformFFmpegAdapter2.ImgFeature(file) + "#" +
+        									  lat + "#" +
+        									  lng + "#" + 
+        								      time +"#" + 
+        									  size + "#" + 
+        								      imd.MetaDataJSON(imd);
+        						
+        						MedusaUtil.log(TAG, "dat: "+dat);
+            					resultData.add(dat);
         					}
         					catch(JSONException je)
         					{
         						Log.e(TAG, je.toString());
         					}
+        					
+        					
+        					
         				}
 
 

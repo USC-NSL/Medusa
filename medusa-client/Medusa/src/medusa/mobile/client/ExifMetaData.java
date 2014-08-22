@@ -27,6 +27,10 @@ public class ExifMetaData
 	private String creationTime;
 	private String exposureTime;
 	private String flash;
+	private String altitude;
+	private String altitudeRef; //0 - Above Sea Level, 1- Below sea level
+	private String latitude;
+	private String longitude;
 	private String focalLength;
 	private String imageLength;
 	private String imageWidth;
@@ -38,6 +42,32 @@ public class ExifMetaData
 	private String numOfFaces;
 	private String hasFaces; // 1 - Yes, 0 - No. eventually it has to be converted to string for JSON
 	private Face[] faces; 
+	
+	public String getAltitude() {
+		return altitude;
+	}
+	public void setAltitude(String altitude) {
+		this.altitude = altitude;
+	}
+	public String getAltitudeRef() {
+		return altitudeRef;
+	}
+	public void setAltitudeRef(String altitudeRef) {
+		this.altitudeRef = altitudeRef;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
 	
 	public String getImageName() {
 		return imageName;
@@ -139,7 +169,6 @@ public class ExifMetaData
 	public ExifMetaData(String filename) {
 		try
 		{
-			
 			ExifInterface exif = new ExifInterface(filename);
 				
 			this.imageName = new File(filename).getName();
@@ -155,6 +184,10 @@ public class ExifMetaData
 			this.model = exif.getAttribute(ExifInterface.TAG_MODEL);
 			this.orientation = Integer.toString(exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, DEFAULT_INT));
 			this.whiteBalance = Integer.toString(exif.getAttributeInt(ExifInterface.TAG_WHITE_BALANCE, DEFAULT_INT));
+			this.altitude = Double.toString(exif.getAltitude(DEFAULT_DOUBLE));
+			this.altitudeRef = Integer.toString(exif.getAttributeInt(ExifInterface.TAG_GPS_ALTITUDE_REF, DEFAULT_INT));
+			this.latitude = exif.getAttribute(ExifInterface.TAG_GPS_LATITUDE);
+			this.longitude = exif.getAttribute(ExifInterface.TAG_GPS_LONGITUDE);
 			
 			 FaceDetector fd = new FaceDetector(Integer.parseInt(this.imageWidth), 
 					 				Integer.parseInt(this.imageLength), MAX_FACES);
@@ -177,9 +210,9 @@ public class ExifMetaData
 		
 	}
 	
-	public static String MetaDataJSON(String file) throws JSONException{
+	public String MetaDataJSON(ExifMetaData imd) throws JSONException{
 		
-		ExifMetaData imd = new ExifMetaData(file);
+		
 		JSONObject metadatadetails = new JSONObject();
 		JSONObject metadata = new JSONObject();
 		
@@ -286,6 +319,34 @@ public class ExifMetaData
 		}
 		else {
 			metadatadetails.put(HAS_FACES, imd.hasFaces);
+		}
+		
+		if(imd.altitude == null) {
+			metadatadetails.put(ExifInterface.TAG_GPS_ALTITUDE, METADATA_NULL);
+		}
+		else {
+			metadatadetails.put(ExifInterface.TAG_GPS_ALTITUDE, imd.altitude);
+		}
+		
+		if(imd.altitudeRef == null) {
+			metadatadetails.put(ExifInterface.TAG_GPS_ALTITUDE_REF, METADATA_NULL);
+		}
+		else {
+			metadatadetails.put(ExifInterface.TAG_GPS_ALTITUDE_REF, imd.altitudeRef);
+		}
+		
+		if(imd.latitude == null) {
+			metadatadetails.put(ExifInterface.TAG_GPS_LATITUDE, METADATA_NULL);
+		}
+		else {
+			metadatadetails.put(ExifInterface.TAG_GPS_LATITUDE, imd.latitude);
+		}
+		
+		if(imd.longitude == null) {
+			metadatadetails.put(ExifInterface.TAG_GPS_LONGITUDE, METADATA_NULL);
+		}
+		else {
+			metadatadetails.put(ExifInterface.TAG_GPS_LONGITUDE, imd.longitude);
 		}
 		
 		metadata.put("metadata", metadatadetails);
