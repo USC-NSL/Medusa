@@ -188,7 +188,7 @@ public class ExifMetaData
 			this.altitudeRef = Integer.toString(exif.getAttributeInt(ExifInterface.TAG_GPS_ALTITUDE_REF, DEFAULT_INT));
 			this.latitude = exif.getAttribute(ExifInterface.TAG_GPS_LATITUDE);
 			this.longitude = exif.getAttribute(ExifInterface.TAG_GPS_LONGITUDE);
-			
+			MedusaUtil.log("", "latitude exif:"+exif.getAttribute(ExifInterface.TAG_GPS_LATITUDE));
 			 FaceDetector fd = new FaceDetector(Integer.parseInt(this.imageWidth), 
 					 				Integer.parseInt(this.imageLength), MAX_FACES);
 			 

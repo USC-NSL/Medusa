@@ -91,9 +91,9 @@ public class MedusaletMain extends MedusaletBase
         				MedusaUtil.log(TAG, "file name: "+file);
         				if(type.equals("video")==true)
         				{
-        					//String dat = "\"" + G.C2DM_ID + "\"," + uid + ",\"" + MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "\","+lat+","+lng+"," + time+','+size;
         					String dat = G.C2DM_ID + "#" + 
         								 uid + "#" + 
+        								 //Histogram doesn't scale to large images
         								 MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "#" +
         								 lat + "#" + 
         								 lng +"#" + 
@@ -108,22 +108,27 @@ public class MedusaletMain extends MedusaletBase
         					try
         					{
         						ExifMetaData imd = new ExifMetaData(file);
-        						
+
         						String dat = G.C2DM_ID + "#" + 
         									  uid +  "#" +
+        									  //Histogram doesn't scale to large images.
         									  MedusaTransformFFmpegAdapter2.ImgFeature(file) + "#" +
         									  lat + "#" +
         									  lng + "#" + 
         								      time +"#" + 
         									  size + "#" + 
         								      imd.MetaDataJSON(imd);
-        						
+
         						MedusaUtil.log(TAG, "dat: "+dat);
             					resultData.add(dat);
         					}
         					catch(JSONException je)
         					{
         						Log.e(TAG, je.toString());
+        					}
+        					catch(Exception e)
+        					{
+        						Log.e("GenerateMetadata Exception", e.toString());
         					}
         					
         					
@@ -182,7 +187,7 @@ public class MedusaletMain extends MedusaletBase
 				MedusaUtil.log(TAG, "* requested data tag=" + input_keys[i] + " uids= " + content);
 				
 				start_uid = content;
-				break;
+			//	break;
 			}
 		}
     	

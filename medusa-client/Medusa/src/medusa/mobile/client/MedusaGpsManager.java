@@ -9,12 +9,14 @@
 
 package medusa.mobile.client;
 
+import java.io.IOException;
 import java.util.ListIterator;
 
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.ExifInterface;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.PowerManager;
@@ -506,6 +508,10 @@ public class MedusaGpsManager extends MedusaManagerBase
 		@Override
 		public void onLocationChanged(Location location) {
 			Log.i(TAG, "* onLocationChanged " + location.getProvider());
+
+			//Update GPS in the exif metadata
+			updateExifGPS(location); 
+			
 			updateWithNewGpsLocation(location);
 		}
 
@@ -658,6 +664,54 @@ public class MedusaGpsManager extends MedusaManagerBase
 			MedusaGpsManager.getInstance().requestService(ele);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void updateExifGPS(Location location)
+	{
+		MedusaGpsServiceE ele;
+		ListIterator<MedusaServiceActiveE> iterator = activeServiceList.listIterator();
+		
+		try 
+		{
+			
+			while (iterator.hasNext()) 
+			{
+				ele = (MedusaGpsServiceE) iterator.next();
+				
+				if(ImageValidator.validate(ele.pkey))
+				{
+					
+					float[] floatLatLong = new float[2];
+					ExifInterface exif = new ExifInterface(ele.pkey);
+					boolean isLocation = exif.getLatLong(floatLatLong);
+					
+					//update the location exif but only once
+					if(exif.getAttribute(ExifInterface.TAG_GPS_LATITUDE) == null && exif.getAttribute(ExifInterface.TAG_GPS_LONGITUDE) == null)
+					{
+						
+						if(isLocation)
+						{
+							exif.setAttribute(ExifInterface.TAG_GPS_LONGITUDE, Float.toString(floatLatLong[1])); //longitude at index 1
+							exif.setAttribute(ExifInterface.TAG_GPS_LATITUDE, Float.toString(floatLatLong[0])); //latitude at index 0
+						}
+						else
+						{
+								exif.setAttribute(ExifInterface.TAG_GPS_LONGITUDE, String.format("%.6f",location.getLongitude()));
+								exif.setAttribute(ExifInterface.TAG_GPS_LATITUDE, String.format("%.6f",location.getLatitude()));
+								exif.setAttribute(ExifInterface.TAG_GPS_ALTITUDE, Double.toString(location.getAltitude()));
+						}
+						
+						
+						exif.saveAttributes();
+					}
+				}
+			}
+			
+		} 
+		catch (IOException e) 
+		{
+			Log.e("MedusaGPSManager", e.toString());
 		}
 	}
 	

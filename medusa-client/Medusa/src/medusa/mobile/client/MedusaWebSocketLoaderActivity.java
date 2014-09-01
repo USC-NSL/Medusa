@@ -101,9 +101,7 @@ public class MedusaWebSocketLoaderActivity extends Activity implements TextToSpe
 		checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
 		startActivityForResult(checkIntent, TTS_DATA_CHECK_CODE);
 		
-		Intent intentImageObserver = new Intent(this.getApplicationContext(), ImageFinderService.class);
-		startService(intentImageObserver);
-
+		
 		/* required to change once at the beginning. */
 		if (G.C2DM_ID == "medusa") {
 			showDialog(DIALOG_UPDATE_WID);
