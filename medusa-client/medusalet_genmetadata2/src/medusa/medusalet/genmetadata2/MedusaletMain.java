@@ -112,7 +112,8 @@ public class MedusaletMain extends MedusaletBase
         						String dat = G.C2DM_ID + "#" + 
         									  uid +  "#" +
         									  //Histogram doesn't scale to large images.
-        									  MedusaTransformFFmpegAdapter2.ImgFeature(file) + "#" +
+        									  //MedusaTransformFFmpegAdapter2.ImgFeature(file) + "#" +
+        									  "F"+"#"+
         									  lat + "#" +
         									  lng + "#" + 
         								      time +"#" + 

@@ -16,7 +16,7 @@ public class ImageValidator {
 	}
 	
 	
-	public static boolean validate(String image)
+	public  boolean validate(String image)
 	{
 		matcher = pattern.matcher(image);
 		return matcher.matches();

@@ -678,8 +678,8 @@ public class MedusaGpsManager extends MedusaManagerBase
 			while (iterator.hasNext()) 
 			{
 				ele = (MedusaGpsServiceE) iterator.next();
-				
-				if(ImageValidator.validate(ele.pkey))
+				ImageValidator iv = new ImageValidator();
+				if(iv.validate(ele.pkey))
 				{
 					
 					float[] floatLatLong = new float[2];
