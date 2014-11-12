@@ -470,6 +470,8 @@ public class MedusaStorageManager extends MedusaManagerBase {
 		}
 
 		if (cr.getCount() == 0) {
+			// change the mediameta table to include lat, lon
+			// retrieve the lat, lon from the content provider or shared preference here
 			sb.append("INSERT into mediameta(path,type,fsize,mtime) VALUES('");
 			sb.append(path + "','" + dtype + "','" + size + "','" + time + "');");
 			

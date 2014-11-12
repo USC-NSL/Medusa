@@ -38,7 +38,7 @@ public class G
 	 * *************************************************************************************
 	 */
 	/* Medusa cloud configuration */
-	public static final String SERVER_URL = "xxx.xxx.xxx.xxx";	/* Task tracker location */
+	public static final String SERVER_URL = "fusion-sqid.isi.edu";	/* Task tracker location */
 	public static final String URIBASE_UPLOAD = "http://" + SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_upload.php";
 	public static final String URIBASE_REPORT = "http://" + SERVER_URL + "/Medusa/medusa-cloud/tasktracker/web_tt_service.php";
 	/* For using reverse incentives */

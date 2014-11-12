@@ -10,10 +10,13 @@
 package medusa.medusalet.genmetadata2;
 
 import java.util.ArrayList;
-import java.util.Random;
+
+import org.json.JSONException;
 
 import android.database.sqlite.SQLiteCursor;
 import android.text.format.Time;
+import android.util.Log;
+import medusa.mobile.client.ExifMetaData;
 import medusa.mobile.client.MedusaStorageManager;
 import medusa.mobile.client.MedusaStorageTextFileAdapter;
 import medusa.mobile.client.MedusaTransformFFmpegAdapter2;
@@ -26,19 +29,11 @@ public class MedusaletMain extends MedusaletBase
 	private final String TAG = "MedusaGenerateMetadata";
 	ArrayList<String> resultData;
 	
-	private long beforeSeconds = 600;   //10 minutes for default setting
-		
 	private String getFilePath() {
 		return G.PATH_SDCARD + G.getDirectoryPathByTag("genmetadata") + MedusaStorageManager.generateTimestampFilename(TAG);
 	}
 	
-	private String genMetadata(String file)
-	{
-		Random r = new Random();
-		return new Integer(r.nextInt(5)).toString();
-	}
-	
-    MedusaletCBBase cbReg = new MedusaletCBBase() { 
+	MedusaletCBBase cbReg = new MedusaletCBBase() { 
     	public void cbPostProcess(Object data, String msg) {
     		if (((String)data).contains(TAG) == true) {
 	    		MedusaStorageManager.requestServiceSQLite(TAG, cbGet_Output, "medusadata.db"
@@ -96,28 +91,51 @@ public class MedusaletMain extends MedusaletBase
         				MedusaUtil.log(TAG, "file name: "+file);
         				if(type.equals("video")==true)
         				{
-        					String dat = "\"" + G.C2DM_ID + "\"," + uid + ",\"" + MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "\","+lat+","+lng+"," + time+','+size;
+        					String dat = G.C2DM_ID + "#" + 
+        								 uid + "#" + 
+        								 //Histogram doesn't scale to large images
+        								 MedusaTransformFFmpegAdapter2.FrameFeature(file, 10) + "#" +
+        								 lat + "#" + 
+        								 lng +"#" + 
+        								 time + "#" +
+        								 size + "#";
         					MedusaUtil.log(TAG, "dat: "+dat);
         					resultData.add(dat);
         				}
         				else if (type.equals("image"))
         				{
-        					String dat = "\"" + G.C2DM_ID + "\"," + uid + ",\"" + MedusaTransformFFmpegAdapter2.ImgFeature(file) + "\","+lat+","+lng+"," + time+','+size;
-        					MedusaUtil.log(TAG, "dat: "+dat);
-        					resultData.add(dat);
+        					        					
+        					try
+        					{
+        						ExifMetaData imd = new ExifMetaData(file);
+
+        						String dat = G.C2DM_ID + "#" + 
+        									  uid +  "#" +
+        									  //Histogram doesn't scale to large images.
+        									  //MedusaTransformFFmpegAdapter2.ImgFeature(file) + "#" +
+        									  "F"+"#"+
+        									  lat + "#" +
+        									  lng + "#" + 
+        								      time +"#" + 
+        									  size + "#" + 
+        								      imd.MetaDataJSON(imd);
+
+        						MedusaUtil.log(TAG, "dat: "+dat);
+            					resultData.add(dat);
+        					}
+        					catch(JSONException je)
+        					{
+        						Log.e(TAG, je.toString());
+        					}
+        					catch(Exception e)
+        					{
+        						Log.e("GenerateMetadata Exception", e.toString());
+        					}
+        					
+        					
+        					
         				}
-        				/*
-        				if (type.compareTo("image") == 0)
-        				{
-                            Bitmap _bitmap = MedusaOpencv.decodeFile(file);
-                            MedusaOpencv.save(_bitmap, file);
-        					String dat = "\"" + G.C2DM_ID + "\"," + uid + "," + MedusaOpencv.FaceDetect(_bitmap)+","+MedusaOpencv.genMetadata(file) + ","+lat+","+lng+"," + time+','+size;
-        					//resultData.add("\"" + G.C2DM_ID + "\"," + uid + "," + MedusaOpencv.genMetadata(file) + ",0,0," + time);
-        					MedusaUtil.log(TAG, "dat: "+dat);
-        					resultData.add(dat);
-        					//"3,3,0,0," + time);
-        				}
-        				*/
+
 
         			} while(cr.moveToNext());
         			
@@ -149,7 +167,8 @@ public class MedusaletMain extends MedusaletBase
 		
 		/* Parsing arguments: <config> tag */
 		String timeCode = this.getConfigParams("-t");
-		if (timeCode != null) beforeSeconds = Integer.parseInt(timeCode);
+		if (timeCode != null)
+			Integer.parseInt(timeCode);
 		
 		MedusaUtil.log(TAG, "* time code =" + timeCode);
 		
@@ -169,7 +188,7 @@ public class MedusaletMain extends MedusaletBase
 				MedusaUtil.log(TAG, "* requested data tag=" + input_keys[i] + " uids= " + content);
 				
 				start_uid = content;
-				break;
+			//	break;
 			}
 		}
     	
