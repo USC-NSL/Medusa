@@ -117,12 +117,14 @@ If this is the case, you may need to make the account that runs the medusa serve
 
 #### Running the Medusa Cloud Server
 
-The medusa cloud requires two daemon processes running in the background. 
-Change directories to **medusa_cloud/tasktracker/**, run the following commands from within **medusa_cloud/tasktracker/**:
+The Medusa cloud originally was made up of two background processes, the runner and the acceptor. However, for the purposes of  at least the MediaScope and testing the basic functinality of Medusa, only the acceptor is required. 
+To start the process(es), change directories to **medusa_cloud/tasktracker/** and run the following command(s) from within **medusa_cloud/tasktracker/**:
 
-```nohup python ./mdscript_runner.py & ```
+```python ./mdscript_runner.py```
 
-```nohup python ./mdscript_acceptor.py & ```
+```python ./mdscript_acceptor.py```
+
+*Note that if you wish to run these processes in the background, you can simply supply the & keyword to the end and prepend the command with nohup to log all output to a file. 
 
 If using websockets and you get an error like this:
 *Failed to bind the ZMQ: Address already in use* 
