@@ -120,8 +120,9 @@ If this is the case, you may need to make the account that runs the medusa serve
 The medusa cloud requires two daemon processes running in the background. 
 Change directories to **medusa_cloud/tasktracker/**, run the following commands from within **medusa_cloud/tasktracker/**:
 
-```python nohup ./mdscript_runner.py & ```
-```python nohup ./mdscript_acceptor.py & ```
+```nohup python ./mdscript_runner.py & ```
+
+```nohup python ./mdscript_acceptor.py & ```
 
 If using websockets and you get an error like this:
 *Failed to bind the ZMQ: Address already in use* 
