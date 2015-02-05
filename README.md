@@ -102,6 +102,9 @@ Specifically, the *BASE-URL-DATA*, *SPC-HOST*, *SPC-URI*, *CS-DBHOST*, and *HIT-
     - remote_host.info
         - The public facing IP on which the mdscript_acceptor.py is run
 
+Make sure you have a logs folder:
+```mkdir medusa_cloud/tasktracker/logs```
+
 #### Configure the WorkerManager
 Install the Apache Tomcat server, then extract **medusa_cloud/workermanager/medusa_hit_server.tar.gz** to the **apache-tomcat-root/webapps/medusa_hit_server/** directory. 
 Verify that the *CS_env* table in the *medusa* database has the same information.
